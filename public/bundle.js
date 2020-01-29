@@ -27916,11 +27916,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//INSERT ORIGNIAL DATA HERE:
 var data = [{ 'a': 1, 'b': 3, 'c': 10 }, { 'a': 3, 'b': 20, 'c': 12 }, { 'a': -1, 'b': -5, 'c': -4 }];
+
+//Converts the original array into 3 new arrays, for each respective key value:
 var aVals = [],
     bVals = [],
     cVals = [];
-
 data.forEach(function (_ref, i) {
   var a = _ref.a,
       b = _ref.b,
@@ -27949,7 +27951,7 @@ var Main = function (_Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Table will go here!'
+          'Table will go here.'
         ),
         _react2.default.createElement(_Chart2.default, { a: aVals, b: bVals, c: cVals })
       );
@@ -59908,20 +59910,22 @@ var Chart = function (_Component) {
 
     _this.state = {
       chartData: {
-        labels: props.a,
         datasets: [{
-          data: props.b,
-          label: "b",
-          borderColor: "blue",
-          backgroundColor: '#739CE7',
-          lineTension: 0
+          label: 'Scatter Dataset #1',
+          showLine: true,
+          tension: 0,
+          fill: false,
+          data: [{ x: -1, y: 0 }, { x: 0, y: 10 }, { x: 10, y: 5 }]
         }, {
-          data: props.c,
-          label: "c",
-          borderColor: "red",
-          backgroundColor: '#F26864',
-          lineTension: 0
+          label: 'Scatter Dataset #2',
+          showLine: true,
+          tension: 0,
+          fill: false,
+          data: [{ x: -2, y: 2 }, { x: -1, y: 1 }, { x: 8, y: 6.5 }]
         }]
+      },
+      chartOptions: {
+        showLine: true
       }
     };
     return _this;
@@ -59933,9 +59937,12 @@ var Chart = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'chart' },
-        _react2.default.createElement(_reactChartjs.Line, {
+        _react2.default.createElement(_reactChartjs.Scatter, {
           data: this.state.chartData,
-          options: { maintainAspectRatio: false }
+          options: this.state.options
+          // options={{
+          //   maintainAspectRatio: false
+          // }}
         })
       );
     }

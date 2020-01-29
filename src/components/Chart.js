@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import { Line } from 'react-chartjs-2';
+import { Line, Scatter } from 'react-chartjs-2';
 
 class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = {
       chartData: {
-        labels: props.a,
         datasets: [{
-          data: props.b,
-          label: "b",
-          borderColor: "blue",
-          backgroundColor: '#739CE7',
-          lineTension: 0,
+          label: 'Scatter Dataset #1',
+          showLine: true,
+          tension: 0,
+          fill: false,
+          data: [
+            { x: -1, y: 0 },
+            { x: 0, y: 10 },
+            { x: 10, y: 5 }
+          ]
         }, {
-          data: props.c,
-          label: "c",
-          borderColor: "red",
-          backgroundColor: '#F26864',
-          lineTension: 0
-        }]
+          label: 'Scatter Dataset #2',
+          showLine: true,
+          tension: 0,
+          fill: false,
+          data: [
+            { x: -2, y: 2 },
+            { x: -1, y: 1 },
+            { x: 8, y: 6.5 }
+          ]
+        }],
+      },
+      chartOptions: {
+        showLine: true
       }
     }
   }
@@ -27,11 +37,12 @@ class Chart extends Component {
   render() {
     return (
       <div className="chart">
-        <Line
+        <Scatter
           data={this.state.chartData}
-          options={
-            { maintainAspectRatio: false }
-          }
+          options={this.state.options}
+        // options={{
+        //   maintainAspectRatio: false
+        // }}
         />
       </div>
     );
