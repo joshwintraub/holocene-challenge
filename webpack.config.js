@@ -9,9 +9,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /(\.jsx?$ | \.css$)/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'

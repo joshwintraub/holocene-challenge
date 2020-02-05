@@ -19,7 +19,7 @@ const data = [
   { 'a': -4, 'b': -3, 'c': -40 },
   { 'a': -1, 'b': -15, 'c': -43 },
   { 'a': 20, 'b': 55, 'c': 40 },
-  { 'a': 7, 'b': 0.5, 'c': 22 },
+  { 'a': 7, 'b': 0.5, 'c': 23 },
   { 'a': 10, 'b': 10, 'c': 40 }
 ];
 
@@ -37,9 +37,15 @@ ac_Set.sort((currObj, nextObj) => currObj.x - nextObj.x);
 class Main extends Component {
   render() {
     return (
-      <div className="display">
-        <Table ab_Set={ab_Set} ac_Set={ac_Set} />
-        <Chart ab_Set={ab_Set} ac_Set={ac_Set} />
+      <div>
+        <div className="header">
+          <h1 align="center">Data Visualizer</h1>
+        </div>
+        <div className="display">
+          <Chart ab_Set={ab_Set} ac_Set={ac_Set} />
+          <Table ab_Set={ab_Set} ac_Set={ac_Set} />
+        </div>
+        <img src="../public/assets/holocene_logo.jpg" width="150px" height="auto" style={{ position: "absolute", bottom: 0, right: 0 }} />
       </div>
     );
   }

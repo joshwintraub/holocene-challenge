@@ -19,7 +19,7 @@ class Chart extends Component {
           showLine: true,
           tension: 0,
           fill: false,
-          borderColor: '#00475D'
+          borderColor: '#008EB3'
         }],
       },
       options: {
@@ -34,7 +34,9 @@ class Chart extends Component {
         },
         title: {
           display: true,
-          text: "Chart Format"
+          text: "Chart",
+          fontSize: 20,
+          fontColor: "#00475D"
         }
       }
     }
@@ -42,7 +44,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className="chart">
+      <div className="chartBox">
         <Scatter
           data={this.state.chartData}
           options={this.state.options}

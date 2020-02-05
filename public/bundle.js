@@ -27927,7 +27927,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //   { 'a': -1, 'b': -5, 'c': -4 }
 // ];
 
-var data = [{ 'a': 1, 'b': 3, 'c': 10 }, { 'a': 3, 'b': 20, 'c': 12 }, { 'a': -1, 'b': -5, 'c': -4 }, { 'a': 2, 'b': 5, 'c': 20 }, { 'a': 7, 'b': 30, 'c': 22 }, { 'a': -4, 'b': -3, 'c': -40 }, { 'a': -1, 'b': -15, 'c': -43 }, { 'a': 20, 'b': 55, 'c': 40 }, { 'a': 7, 'b': 0.5, 'c': 22 }, { 'a': 10, 'b': 10, 'c': 40 }];
+var data = [{ 'a': 1, 'b': 3, 'c': 10 }, { 'a': 3, 'b': 20, 'c': 12 }, { 'a': -1, 'b': -5, 'c': -4 }, { 'a': 2, 'b': 5, 'c': 20 }, { 'a': 7, 'b': 30, 'c': 22 }, { 'a': -4, 'b': -3, 'c': -40 }, { 'a': -1, 'b': -15, 'c': -43 }, { 'a': 20, 'b': 55, 'c': 40 }, { 'a': 7, 'b': 0.5, 'c': 23 }, { 'a': 10, 'b': 10, 'c': 40 }];
 
 //Converts the original array into 2 new arrays, for each unique dataset:
 var ab_Set = [],
@@ -27963,9 +27963,23 @@ var Main = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'display' },
-        _react2.default.createElement(_Table2.default, { ab_Set: ab_Set, ac_Set: ac_Set }),
-        _react2.default.createElement(_Chart2.default, { ab_Set: ab_Set, ac_Set: ac_Set })
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          _react2.default.createElement(
+            'h1',
+            { align: 'center' },
+            'Data Visualizer'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'display' },
+          _react2.default.createElement(_Chart2.default, { ab_Set: ab_Set, ac_Set: ac_Set }),
+          _react2.default.createElement(_Table2.default, { ab_Set: ab_Set, ac_Set: ac_Set })
+        ),
+        _react2.default.createElement('img', { src: '../public/assets/holocene_logo.jpg', width: '150px', height: 'auto', style: { position: "absolute", bottom: 0, right: 0 } })
       );
     }
   }]);
@@ -59935,7 +59949,7 @@ var Chart = function (_Component) {
           showLine: true,
           tension: 0,
           fill: false,
-          borderColor: '#00475D'
+          borderColor: '#008EB3'
         }]
       },
       options: {
@@ -59950,7 +59964,9 @@ var Chart = function (_Component) {
         },
         title: {
           display: true,
-          text: "Chart Format"
+          text: "Chart",
+          fontSize: 20,
+          fontColor: "#00475D"
         }
       }
     };
@@ -59962,7 +59978,7 @@ var Chart = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'chart' },
+        { className: 'chartBox' },
         _react2.default.createElement(_reactChartjs.Scatter, {
           data: this.state.chartData,
           options: this.state.options
@@ -80900,14 +80916,14 @@ var Table = function Table(props) {
 
   return _react2.default.createElement(
     "div",
-    null,
+    { className: "tableBox" },
     _react2.default.createElement(
       "table",
       { className: "table", border: "10" },
       _react2.default.createElement(
         "caption",
-        null,
-        "Table Format"
+        { style: { fontWeight: "bold" } },
+        "Table"
       ),
       _react2.default.createElement(
         "tbody",
@@ -80922,12 +80938,12 @@ var Table = function Table(props) {
           ),
           _react2.default.createElement(
             "th",
-            null,
+            { style: { color: "#C17A2C" } },
             "B"
           ),
           _react2.default.createElement(
             "th",
-            null,
+            { style: { color: "#008EB3" } },
             "C"
           )
         ),
@@ -80937,18 +80953,18 @@ var Table = function Table(props) {
             { key: id },
             _react2.default.createElement(
               "td",
-              { style: { color: "red" } },
+              null,
               elem.x
             ),
             _react2.default.createElement(
               "td",
-              null,
+              { style: { color: "#C17A2C" } },
               elem.y
             ),
             _react2.default.createElement(
               "td",
-              null,
-              props.ac_Set[id].y
+              { style: { color: "#008EB3" } },
+              elem.x
             )
           );
         })
