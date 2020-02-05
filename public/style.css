@@ -5,5 +5,30 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #7fc7d9;
+
+}
+
+.display {
+  display: flex;
+}
+
+.table {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: blue;
+  background-color: blanchedalmond;
+  position: relative;
+  margin: auto;
+  width: 500px;
+  height: 300px;
+}
+
+.chart {
+flex: 1;
+position: relative;
+margin: auto;
+width: auto;
+height: auto;
+background-color: tan;
+margin-left: 100px;
 }

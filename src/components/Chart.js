@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Line, Scatter } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 
 class Chart extends Component {
   constructor(props) {
@@ -7,29 +7,35 @@ class Chart extends Component {
     this.state = {
       chartData: {
         datasets: [{
-          label: 'Scatter Dataset #1',
+          label: 'Dataset B',
+          data: props.ab_Set,
           showLine: true,
           tension: 0,
           fill: false,
-          data: [
-            { x: -1, y: 0 },
-            { x: 0, y: 10 },
-            { x: 10, y: 5 }
-          ]
+          borderColor: '#C17A2C'
         }, {
-          label: 'Scatter Dataset #2',
+          label: 'Dataset C',
+          data: props.ac_Set,
           showLine: true,
           tension: 0,
           fill: false,
-          data: [
-            { x: -2, y: 2 },
-            { x: -1, y: 1 },
-            { x: 8, y: 6.5 }
-          ]
+          borderColor: '#00475D'
         }],
       },
-      chartOptions: {
-        showLine: true
+      options: {
+        tooltips: {
+          callbacks: {
+            label: (tooltipItem, data) => {
+              const label = data.datasets[tooltipItem.datasetIndex].label;
+              const point = { x: tooltipItem.xLabel, y: tooltipItem.yLabel };
+              return `${label} at point: (x= ${point.x}, y= ${point.y})`;
+            }
+          }
+        },
+        title: {
+          display: true,
+          text: "Chart Format"
+        }
       }
     }
   }
@@ -40,9 +46,6 @@ class Chart extends Component {
         <Scatter
           data={this.state.chartData}
           options={this.state.options}
-        // options={{
-        //   maintainAspectRatio: false
-        // }}
         />
       </div>
     );
