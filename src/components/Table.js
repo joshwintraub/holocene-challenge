@@ -3,7 +3,7 @@ import React from 'react';
 const Table = (props => {
 
   return (
-    <div className="tableBox">
+    <div>
       <table className="table" border="10">
         <caption style={{ fontWeight: "bold" }}>Table</caption>
         <tbody>
@@ -16,7 +16,7 @@ const Table = (props => {
             <tr key={id}>
               <td>{elem.x}</td>
               <td style={{ color: "#C17A2C" }}>{elem.y}</td>
-              <td style={{ color: "#008EB3" }}>{elem.x}</td>
+              <td style={{ color: "#008EB3" }}>{props.ac_Set[id].y}</td>
             </tr>
           ))}
         </tbody>

@@ -4,23 +4,10 @@ import Chart from './components/Chart';
 import Table from './components/Table';
 
 //INSERT ORIGNIAL DATA HERE:
-// const data = [
-//   { 'a': 1, 'b': 3, 'c': 10 },
-//   { 'a': 3, 'b': 20, 'c': 12 },
-//   { 'a': -1, 'b': -5, 'c': -4 }
-// ];
-
 const data = [
   { 'a': 1, 'b': 3, 'c': 10 },
   { 'a': 3, 'b': 20, 'c': 12 },
-  { 'a': -1, 'b': -5, 'c': -4 },
-  { 'a': 2, 'b': 5, 'c': 20 },
-  { 'a': 7, 'b': 30, 'c': 22 },
-  { 'a': -4, 'b': -3, 'c': -40 },
-  { 'a': -1, 'b': -15, 'c': -43 },
-  { 'a': 20, 'b': 55, 'c': 40 },
-  { 'a': 7, 'b': 0.5, 'c': 23 },
-  { 'a': 10, 'b': 10, 'c': 40 }
+  { 'a': -1, 'b': -5, 'c': -4 }
 ];
 
 //Converts the original array into 2 new arrays, for each unique dataset:
@@ -39,13 +26,13 @@ class Main extends Component {
     return (
       <div>
         <div className="header">
-          <h1 align="center">Data Visualizer</h1>
+          <h1>Data Visualizer</h1>
         </div>
         <div className="display">
-          <Chart ab_Set={ab_Set} ac_Set={ac_Set} />
           <Table ab_Set={ab_Set} ac_Set={ac_Set} />
+          <Chart ab_Set={ab_Set} ac_Set={ac_Set} />
         </div>
-        <img src="../public/assets/holocene_logo.jpg" width="150px" height="auto" style={{ position: "absolute", bottom: 0, right: 0 }} />
+        <img className="img" src="../public/assets/holocene_logo.jpg" />
       </div>
     );
   }

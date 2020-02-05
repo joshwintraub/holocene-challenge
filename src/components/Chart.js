@@ -44,7 +44,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className="chartBox">
+      <div className="chart">
         <Scatter
           data={this.state.chartData}
           options={this.state.options}

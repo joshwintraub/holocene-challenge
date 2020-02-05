@@ -27921,13 +27921,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 //INSERT ORIGNIAL DATA HERE:
-// const data = [
-//   { 'a': 1, 'b': 3, 'c': 10 },
-//   { 'a': 3, 'b': 20, 'c': 12 },
-//   { 'a': -1, 'b': -5, 'c': -4 }
-// ];
-
-var data = [{ 'a': 1, 'b': 3, 'c': 10 }, { 'a': 3, 'b': 20, 'c': 12 }, { 'a': -1, 'b': -5, 'c': -4 }, { 'a': 2, 'b': 5, 'c': 20 }, { 'a': 7, 'b': 30, 'c': 22 }, { 'a': -4, 'b': -3, 'c': -40 }, { 'a': -1, 'b': -15, 'c': -43 }, { 'a': 20, 'b': 55, 'c': 40 }, { 'a': 7, 'b': 0.5, 'c': 23 }, { 'a': 10, 'b': 10, 'c': 40 }];
+var data = [{ 'a': 1, 'b': 3, 'c': 10 }, { 'a': 3, 'b': 20, 'c': 12 }, { 'a': -1, 'b': -5, 'c': -4 }];
 
 //Converts the original array into 2 new arrays, for each unique dataset:
 var ab_Set = [],
@@ -27969,17 +27963,17 @@ var Main = function (_Component) {
           { className: 'header' },
           _react2.default.createElement(
             'h1',
-            { align: 'center' },
+            null,
             'Data Visualizer'
           )
         ),
         _react2.default.createElement(
           'div',
           { className: 'display' },
-          _react2.default.createElement(_Chart2.default, { ab_Set: ab_Set, ac_Set: ac_Set }),
-          _react2.default.createElement(_Table2.default, { ab_Set: ab_Set, ac_Set: ac_Set })
+          _react2.default.createElement(_Table2.default, { ab_Set: ab_Set, ac_Set: ac_Set }),
+          _react2.default.createElement(_Chart2.default, { ab_Set: ab_Set, ac_Set: ac_Set })
         ),
-        _react2.default.createElement('img', { src: '../public/assets/holocene_logo.jpg', width: '150px', height: 'auto', style: { position: "absolute", bottom: 0, right: 0 } })
+        _react2.default.createElement('img', { className: 'img', src: '../public/assets/holocene_logo.jpg' })
       );
     }
   }]);
@@ -59978,7 +59972,7 @@ var Chart = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'chartBox' },
+        { className: 'chart' },
         _react2.default.createElement(_reactChartjs.Scatter, {
           data: this.state.chartData,
           options: this.state.options
@@ -80916,7 +80910,7 @@ var Table = function Table(props) {
 
   return _react2.default.createElement(
     "div",
-    { className: "tableBox" },
+    null,
     _react2.default.createElement(
       "table",
       { className: "table", border: "10" },
@@ -80964,7 +80958,7 @@ var Table = function Table(props) {
             _react2.default.createElement(
               "td",
               { style: { color: "#008EB3" } },
-              elem.x
+              props.ac_Set[id].y
             )
           );
         })
