@@ -2,13 +2,15 @@
 
 
 ## To run the app:
-1. Clone this repo into a new folder.
-2. In the command line run `npm install` to install necessary depenencies.
-3. Run `npm start` to build the webpack bundle file.
-4. Go to `index.html` in the `/public` folder and open it using *Live Server* from your IDE (Atom, VS Code, Sublime, etc).
+1. Clone this repo by running this in command line: `git clone https://github.com/jbwgithub/holocene-challenge.git`.
+2. Now `cd` into the folder `/holocene-challenge`.
+3. Run `npm install` to install necessary depenencies.
+4. Run `npm start` to build the webpack bundle file.
+5. Go to `index.html` in the `/public` folder and open it using *Live Server* from your IDE (Atom, VS Code, Sublime, etc).
 
 ## To change the input (2D Array) data:
-1. Go to `main.js` in the `/src` folder and find the comment on line 6. You can change the array [] called `data` on line 7.
+1. Go to `main.js` in the `/src` folder and find the comment on line 6.
+2. You can change the array `[]` called `data` on line 7.
 
 
 ### Functionality to Try:
