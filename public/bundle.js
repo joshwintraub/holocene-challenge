@@ -80913,10 +80913,10 @@ var Table = function Table(props) {
     null,
     _react2.default.createElement(
       "table",
-      { className: "table", border: "10" },
+      { className: "table" },
       _react2.default.createElement(
         "caption",
-        { style: { fontWeight: "bold" } },
+        null,
         "Table"
       ),
       _react2.default.createElement(

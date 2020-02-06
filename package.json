@@ -2,7 +2,7 @@
   "name": "holocene-challenge",
   "version": "1.0.0",
   "description": "Display 2D array as a chart and a graph",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "npm run build",
     "build": "webpack -w"

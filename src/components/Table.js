@@ -4,8 +4,8 @@ const Table = (props => {
 
   return (
     <div>
-      <table className="table" border="10">
-        <caption style={{ fontWeight: "bold" }}>Table</caption>
+      <table className="table">
+        <caption>Table</caption>
         <tbody>
           <tr>
             <th>A</th>

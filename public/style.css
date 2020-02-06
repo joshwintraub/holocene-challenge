@@ -12,6 +12,7 @@ body {
 .display {
   display: flex;
   padding: 20px;
+  align-self: flex-start;
 }
 
 .header {
@@ -37,16 +38,26 @@ body {
 .table {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #00475D;
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
   background-color: #ffffff;
   position: relative;
   margin: auto;
   width: auto;
   height: auto;
+  max-height: 80vh;
+  display: block;
+  overflow-y: scroll;
   background-color: #D3E8E0;
+  border-style: solid;
   border-color: #2D637F;
   border-width: 3px;
   border-radius: 5px;
+}
+
+td {
+  border: 1px solid;
 }
 
 .chart {
