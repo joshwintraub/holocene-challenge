@@ -59961,6 +59961,20 @@ var Chart = function (_Component) {
           text: "Chart",
           fontSize: 20,
           fontColor: "#00475D"
+        },
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "A"
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "B / C"
+            }
+          }]
         }
       }
     };
@@ -59970,13 +59984,16 @@ var Chart = function (_Component) {
   _createClass(Chart, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'chart' },
-        _react2.default.createElement(_reactChartjs.Scatter, {
-          data: this.state.chartData,
-          options: this.state.options
-        })
+      return (
+        // Render the chart component
+        _react2.default.createElement(
+          'div',
+          { className: 'chart' },
+          _react2.default.createElement(_reactChartjs.Scatter, {
+            data: this.state.chartData,
+            options: this.state.options
+          })
+        )
       );
     }
   }]);
@@ -80908,60 +80925,63 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Table = function Table(props) {
 
-  return _react2.default.createElement(
-    "div",
-    null,
+  return (
+    // Render the table component
     _react2.default.createElement(
-      "table",
-      { className: "table" },
+      "div",
+      null,
       _react2.default.createElement(
-        "caption",
-        null,
-        "Table"
-      ),
-      _react2.default.createElement(
-        "tbody",
-        null,
+        "table",
+        { className: "table" },
         _react2.default.createElement(
-          "tr",
+          "caption",
+          null,
+          "Table"
+        ),
+        _react2.default.createElement(
+          "tbody",
           null,
           _react2.default.createElement(
-            "th",
-            null,
-            "A"
-          ),
-          _react2.default.createElement(
-            "th",
-            { style: { color: "#C17A2C" } },
-            "B"
-          ),
-          _react2.default.createElement(
-            "th",
-            { style: { color: "#008EB3" } },
-            "C"
-          )
-        ),
-        props.ab_Set.map(function (elem, id) {
-          return _react2.default.createElement(
             "tr",
-            { key: id },
+            null,
             _react2.default.createElement(
-              "td",
+              "th",
               null,
-              elem.x
+              "A"
             ),
             _react2.default.createElement(
-              "td",
+              "th",
               { style: { color: "#C17A2C" } },
-              elem.y
+              "B"
             ),
             _react2.default.createElement(
-              "td",
+              "th",
               { style: { color: "#008EB3" } },
-              props.ac_Set[id].y
+              "C"
             )
-          );
-        })
+          ),
+          props.ab_Set.map(function (elem, id) {
+            return _react2.default.createElement(
+              "tr",
+              { key: id },
+              _react2.default.createElement(
+                "td",
+                null,
+                elem.x
+              ),
+              _react2.default.createElement(
+                "td",
+                { style: { color: "#C17A2C" } },
+                elem.y
+              ),
+              _react2.default.createElement(
+                "td",
+                { style: { color: "#008EB3" } },
+                props.ac_Set[id].y
+              )
+            );
+          })
+        )
       )
     )
   );

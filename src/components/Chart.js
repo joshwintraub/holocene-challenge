@@ -37,6 +37,20 @@ class Chart extends Component {
           text: "Chart",
           fontSize: 20,
           fontColor: "#00475D"
+        },
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "A"
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: "B / C"
+            }
+          }]
         }
       }
     }
@@ -44,6 +58,7 @@ class Chart extends Component {
 
   render() {
     return (
+      // Render the chart component
       <div className="chart">
         <Scatter
           data={this.state.chartData}
