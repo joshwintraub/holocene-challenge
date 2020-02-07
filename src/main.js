@@ -17,7 +17,7 @@ data.forEach(({ a, b, c }, i) => {
   ac_Set[i] = { x: a, y: c };
 });
 
-//Sort the 2 datasets so the datapoints are in asceding order:
+//Sort the 2 datasets so the datapoints are in ascending order:
 ab_Set.sort((currObj, nextObj) => currObj.x - nextObj.x);
 ac_Set.sort((currObj, nextObj) => currObj.x - nextObj.x);
 
